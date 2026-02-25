@@ -1,0 +1,226 @@
+---
+title: "APW Year 3 AI Report"
+format: pdf
+---
+
+Schools could choose whether or not to use AI in October. The following analysis considers the results of pupils matched between the two sessions.
+
+## Descriptive Statistics and Score Distributions
+
+The February results of the two groups were very similar. After using AI in October, the mean of the scores was again similar, but the spread narrowed for AI users.
+
+```{r}
+#| warning: false
+#| echo: false
+#| include: false
+
+# Load necessary libraries
+rm(list=ls())
+require(tidyverse)
+require(nmmMongo)
+require(here)
+require(knitr)
+
+final_data <- read_csv(here("output", "apw_feb_to_oct_correlation_data.csv"))
+# convert ai_user to factor
+final_data <- final_data %>%
+  mutate(ai_user = factor(ai_user, levels = c(FALSE,TRUE), labels = c("Non AI User", "AI User")))
+# rename all columns which end with _base _feb_year_2
+# use tidyverse rename_with
+final_data <- final_data %>%
+  rename_with(~ str_replace(.,  "_base","_feb_year_2")) %>%
+  rename_with(~ str_replace(.,  "_target","_oct_year_3"))
+```
+
+```{r}
+#| echo: false
+#| label: tbl-descriptives
+#| tbl-cap: "Descriptive Statistics by AI User Status"
+ 
+# Do some descriptive stats on every assessment
+# split by ai_user
+descriptive_stats <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(
+    mean_feb_year_2 = mean(finalScore_feb_year_2),
+    sd_feb_year_2 = sd(finalScore_feb_year_2),
+    mean_oct_year_3 = mean(finalScore_oct_year_3),
+    sd_oct_year_3 = sd(finalScore_oct_year_3),
+    n = n()
+  )
+knitr::kable(descriptive_stats, digits = 2)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-score-distributions
+#| fig-cap: "Distributions of Final Scores by AI User Status"
+
+# plot the distributions of scores for base and target by ai_user
+plot3 <- final_data %>%
+  pivot_longer(cols = c(finalScore_feb_year_2, finalScore_oct_year_3), names_to = "assessment", values_to = "score") %>%
+  ggplot(aes(x = score, fill = ai_user)) +
+  geom_density(alpha = 0.5) +
+  # limit x axis 300 to 700
+  xlim(300, 700) +
+  labs(x = "Final Score",
+       y = "Density",
+       fill = "AI User in Oct") +
+  theme_minimal() +
+  facet_wrap(~ assessment, labeller = as_labeller(c(`finalScore_feb_year_2` = "APW Feb", `finalScore_oct_year_3` = "APW Oct")))
+print(plot3)
+
+```
+
+
+## Correlations
+
+Regression lines show the average progress of pupils from February to October was similar whether or not their school used AI.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-score-correlation
+# Plot scores by AI user status
+plot <- final_data %>%
+  ggplot(aes(x = finalScore_feb_year_2, y = finalScore_oct_year_3)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  # limit y axis 300 to 700
+  ylim(300, 700) +
+  labs(title = "Correlation of Final Scores from APW Feb to APW Oct",
+       x = "Final Score in APW Feb",
+       y = "Final Score in APW Oct",
+       color = "AI User in Oct") +
+  theme_minimal() + 
+  facet_wrap(~ ai_user)
+
+print(plot)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-correlations
+#| tbl-cap: "Correlation between APW Feb and APW Oct Final Scores by AI User Status"
+correlation_results <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(n = n(), correlation = cor(finalScore_feb_year_2, finalScore_oct_year_3)) %>%
+  ungroup()
+knitr::kable(correlation_results, digits = 2)
+```
+
+Correlations for AI users were higher than for non-AI users, though both were strong.
+
+## Regression to the Mean and Progress Levels
+AI users had proportionally more pupils with a higher than average score in October making less than average progress. In other words, the regression to the mean effect is more pronounced for AI users.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-progress-levels
+#| fig-cap: "Progress Levels from APW Feb to APW Oct by AI User Status"
+
+# create a new factor with four levels
+# level 1: score above the below the mean in oct making less than average progress
+# level 2: score above the mean in oct making more than average progress
+# level 3: score below the mean in oct making less than average progress
+# level 4: score below the mean in oct making more than average progress
+mean_feb <- mean(final_data$finalScore_feb_year_2)
+mean_oct <- mean(final_data$finalScore_oct_year_3)
+# use lm to get predicted values of progress for each pupil
+lm_model <- lm(finalScore_oct_year_3 ~ finalScore_feb_year_2, data = final_data)
+final_data <- final_data %>%
+  mutate(predicted_oct = predict(lm_model),
+         progress = finalScore_oct_year_3 - predicted_oct,
+         progress_level = case_when(
+           finalScore_oct_year_3 >= mean_oct & progress >= 0 ~ "Above Mean, More Progress",
+           finalScore_oct_year_3 >= mean_oct & progress < 0 ~ "Above Mean, Less Progress",
+           finalScore_oct_year_3 < mean_oct & progress >= 0 ~ "Below Mean, More Progress",
+           finalScore_oct_year_3 < mean_oct & progress < 0 ~ "Below Mean, Less Progress"
+         ))
+# plot the progress levels by ai_user
+plot2 <- final_data %>%
+  ggplot(aes(x = finalScore_feb_year_2, y = finalScore_oct_year_3, color = progress_level)) +
+  geom_point(alpha = 0.5) +
+  # limit y axis 300 to 700
+  ylim(300, 700) +
+  labs(title = "",
+       x = "Final Score in APW Feb",
+       y = "Final Score in APW Oct",
+       color = "Progress Level") +
+  theme_minimal() + 
+  facet_wrap(~ ai_user)
+print(plot2)
+
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-progress-levels
+#| tbl-cap: "Progress Levels from APW Feb to APW Oct by AI User Status"
+# summarise progress levels by ai_user
+progress_summary <- final_data %>%
+  group_by(ai_user, progress_level) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  group_by(ai_user) %>%
+  mutate(pct = n / sum(n) * 100) %>%
+  ungroup()
+
+# pivot wider
+progress_summary_wide <- progress_summary %>%
+  pivot_wider(names_from = progress_level, values_from = c(n, pct), values_fill = 0)
+
+# select only the columns starting with pct
+progress_summary_wide <- progress_summary_wide %>%
+    select(ai_user, starts_with("pct"))
+
+knitr::kable(progress_summary_wide, digits = 2)
+
+```
+
+
+## Number of Comparisons & Infit Summary
+
+The number of comparisons completed by AI was substantially higher for AI users than non-AI users. A higher number of comparisons is likely to lead to more reliable measurement. Infit greater than 1.3 is a measure of consistency of the judging. The percentage of pupils with infit over 1.3 was much lower for the group using AI. However, infit is sensitive to the number of comparisons made, so the difference does not necessarily reflect more consistency in the AI judging than the human.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-comparisons-summary
+#| tbl-cap: "Comparisons Summary by AI User Status"
+
+# summarise target infit by ai
+# percentage of infit values over 1.3
+infit_summary <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(
+    mean_comparisons_feb_year_2 = mean(comparisons_feb_year_2, na.rm = TRUE),
+    mean_comparisons_oct_year_3 = mean(comparisons_oct_year_3, na.rm = TRUE),
+    pct_feb_year_2 = sum(infit_feb_year_2 > 1.3, na.rm = TRUE) / n() * 100,
+    pct_oct_year_3 = sum(infit_oct_year_3 > 1.3, na.rm = TRUE) / n() * 100
+  )
+
+
+knitr::kable(infit_summary %>% select(mean_comparisons_feb_year_2,mean_comparisons_oct_year_3), digits = 2)
+
+```
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-infit-summary
+#| tbl-cap: "Infit Summary by AI User Status. Percentage of Pupils with Infit > 1.3"
+knitr::kable(infit_summary %>% select(pct_feb_year_2,pct_oct_year_3), digits = 2)
+```
+
+## Conclusion
+
+Overall, there is little to differentiate the performance of pupils whose schools used AI in October from those that did not. Both groups made similar average progress from February to October, with strong correlations between the two assessments.
+
+The small differences that do appear, in the distributions and in the regression to the mean, may be explained by the higher number of comparisons completed by AI users, which is likely to lead to more reliable measurement.
+
+What the analysis cannot show is whether the AI rewarded different skills or approaches to writing than human judges. Further qualitative analysis of the types of writing rewarded by each method would be needed to explore this question.
