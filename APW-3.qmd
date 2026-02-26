@@ -1,6 +1,6 @@
 ---
 title: "APW Year 3 AI Report"
-format: pdf
+format: html
 ---
 
 Schools could choose whether or not to use AI in October. The following analysis considers the results of pupils matched between the two sessions.
@@ -17,7 +17,6 @@ The February results of the two groups were very similar. After using AI in Octo
 # Load necessary libraries
 rm(list=ls())
 require(tidyverse)
-require(nmmMongo)
 require(here)
 require(knitr)
 
