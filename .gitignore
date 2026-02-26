@@ -1,3 +1,4 @@
 /.quarto/
 *.pptx
 output/apw_feb_to_oct_correlation_data.csv
+.DS_Store
