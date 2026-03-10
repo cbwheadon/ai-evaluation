@@ -335,7 +335,7 @@ knitr::kable(
 - The AI occasionally produces transcriptions that do not match the original handwritten script
 - The **Fall of the House of Usher** issue
 - Handwriting degrades rapidly under exam conditions
-- Requires mutliple models & post-hoc checking to identify and remove affected scripts
+- Requires multiple models & post-hoc checking to identify and remove affected scripts
 
 ---
 
