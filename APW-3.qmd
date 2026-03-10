@@ -20,7 +20,7 @@ require(tidyverse)
 require(here)
 require(knitr)
 
-final_data <- read_csv(here("output", "apw_feb_to_oct_correlation_data.csv"))
+final_data <- read_csv(here("output", "apw_feb_to_oct_correlation_data_anon.csv"))
 # convert ai_user to factor
 final_data <- final_data %>%
   mutate(ai_user = factor(ai_user, levels = c(FALSE,TRUE), labels = c("Non AI User", "AI User")))
