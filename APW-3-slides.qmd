@@ -1,0 +1,373 @@
+---
+title: "AI Enhanced CJ"
+subtitle: "A Natural Experiment"
+author: "Chris Wheadon"
+institute: "No More Marking"
+format:
+  revealjs:
+    theme: serif
+    logo: Master-NMM.png
+    fontsize: 28px
+---
+
+```{=html}
+<style>
+.reveal h2 {
+  background-color: #3C1360;
+  color: #ffffff;
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+}
+.reveal h3 {
+  color: #00C1B4;
+  border-bottom: 2px solid #00C1B4;
+  padding-bottom: 0.1em;
+}
+.reveal blockquote {
+  border-left: 4px solid #F26522;
+  color: #2D2D2D;
+}
+.reveal .callout {
+  border-left-color: #3C1360;
+}
+.reveal .no-header h2 {
+  display: none;
+}
+.reveal h2:empty {
+  display: none;
+}
+</style>
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| include: false
+
+rm(list=ls())
+require(tidyverse)
+require(here)
+require(knitr)
+require(rstatix)
+require(ggpubr)
+
+final_data <- read_csv(here("output", "apw_feb_to_oct_correlation_data_anon.csv"))
+final_data <- final_data %>%
+  mutate(ai_user = factor(ai_user, levels = c(FALSE, TRUE), labels = c("Non AI User", "AI User")))
+final_data <- final_data %>%
+  rename_with(~ str_replace(., "_base", "_feb_year_2")) %>%
+  rename_with(~ str_replace(., "_target", "_oct_year_3"))
+
+mean_feb <- mean(final_data$finalScore_feb_year_2)
+mean_oct <- mean(final_data$finalScore_oct_year_3)
+lm_model <- lm(finalScore_oct_year_3 ~ finalScore_feb_year_2, data = final_data)
+final_data <- final_data %>%
+  mutate(predicted_oct = predict(lm_model),
+         progress = finalScore_oct_year_3 - predicted_oct,
+         progress_level = case_when(
+           finalScore_oct_year_3 >= mean_oct & progress >= 0 ~ "Above Mean, More Progress",
+           finalScore_oct_year_3 >= mean_oct & progress < 0 ~ "Above Mean, Less Progress",
+           finalScore_oct_year_3 < mean_oct & progress >= 0 ~ "Below Mean, More Progress",
+           finalScore_oct_year_3 < mean_oct & progress < 0 ~ "Below Mean, Less Progress"
+         ))
+```
+
+## Context
+
+- APW 3 is the writing of pupils in Year 3, aged 7 to 8
+- Use this picture to write a story
+- Handwritten
+- In Feb of year 2 no AI was available, teachers had to judge
+- In Oct of year 3, schools could choose whether or not to use AI judges
+- The following analysis considers **matched pupils** between the two sessions
+
+---
+
+## Measuring Progress
+
+- We use an anchoring design where scripts are repeated between sessions
+- We calculate a shift constant between sessions based on the shift in scores from the anchors
+- Same anchors for AI and non-AI route
+
+---
+
+## Descriptive Statistics
+
+The February results of the two groups were very similar. After using AI in October, the mean scores were again similar — but the **spread narrowed for AI users**.
+
+```{r}
+#| echo: false
+#| label: tbl-descriptives
+#| tbl-cap: "Descriptive Statistics by AI User Status"
+
+descriptive_stats <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(
+    mean_feb_year_2 = mean(finalScore_feb_year_2),
+    sd_feb_year_2 = sd(finalScore_feb_year_2),
+    mean_oct_year_3 = mean(finalScore_oct_year_3),
+    sd_oct_year_3 = sd(finalScore_oct_year_3),
+    n = n()
+  )
+descriptive_stats %>%
+  knitr::kable(
+    digits = 0,
+    col.names = c("AI User", "Mean", "SD", "Mean", "SD", "N")
+  ) %>%
+  kableExtra::add_header_above(c(" " = 1, "Feb Year 2" = 2, "Oct Year 3" = 2, " " = 1))
+```
+
+---
+
+## Score Distributions
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-score-distributions
+#| fig-cap: "Distributions of Final Scores by AI User Status"
+
+final_data %>%
+  pivot_longer(cols = c(finalScore_feb_year_2, finalScore_oct_year_3),
+               names_to = "assessment", values_to = "score") %>%
+  ggplot(aes(x = score, fill = ai_user)) +
+  geom_density(alpha = 0.5) +
+  xlim(300, 700) +
+  labs(x = "Final Score", y = "Density", fill = "AI User in Oct") +
+  theme_minimal() +
+  facet_wrap(~ assessment,
+             labeller = as_labeller(c(`finalScore_feb_year_2` = "APW Feb",
+                                      `finalScore_oct_year_3` = "APW Oct")))
+```
+
+---
+
+## Statistical Tests
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-statistical-tests
+
+long_data <- final_data %>% select(
+  student,
+  finalScore_feb_year_2,
+  finalScore_oct_year_3,
+  ai_user 
+) %>% pivot_longer(
+  cols = c(finalScore_feb_year_2, finalScore_oct_year_3),
+               names_to = "assessment", values_to = "score"
+)
+
+res.anova <- long_data %>%
+  anova_test(dv = score, wid = student, between = ai_user, within = assessment)
+get_anova_table(res.anova) |>
+  knitr::kable(digits = 3)
+```
+
+---
+
+## Statistical Tests: Interaction
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-statistical-tests
+
+# Create the interaction plot
+ggline(long_data, 
+       x = "assessment", 
+       y = "score", 
+       color = "ai_user", 
+       add = c("mean_sd"),
+       palette = "jco",
+       ylab = "Test Score", 
+       xlab = "Testing Period",
+       title = "Impact of Condition on Student Performance")
+```
+
+---
+
+## Correlations
+
+Regression lines show average progress from February to October was **similar regardless of AI use**.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-score-correlation
+
+final_data %>%
+  ggplot(aes(x = finalScore_feb_year_2, y = finalScore_oct_year_3)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  ggpmisc::stat_poly_eq(
+    aes(label = paste(after_stat(eq.label), after_stat(rr.label), sep = "~~~")),
+    formula = y ~ x, parse = TRUE, size = 3
+  ) +
+  ylim(300, 700) +
+  labs(title = "Correlation of Final Scores from APW Feb to APW Oct",
+       x = "Final Score in APW Feb",
+       y = "Final Score in APW Oct") +
+  theme_minimal() +
+  facet_wrap(~ ai_user)
+```
+
+---
+
+## Correlations by Group
+
+Correlations for AI users were **higher** than for non-AI users, though both were strong.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-correlations
+#| tbl-cap: "Correlation between APW Feb and APW Oct Final Scores by AI User Status"
+
+correlation_results <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(n = n(), correlation = cor(finalScore_feb_year_2, finalScore_oct_year_3)) %>%
+  ungroup()
+knitr::kable(correlation_results, digits = 2)
+```
+
+---
+
+## Regression to the Mean & Progress Levels
+
+AI users had proportionally more pupils with **above-average scores making less than average progress** — a more pronounced regression to the mean effect.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-progress-levels
+#| fig-cap: "Progress Levels from APW Feb to APW Oct by AI User Status"
+
+final_data %>%
+  ggplot(aes(x = finalScore_feb_year_2, y = finalScore_oct_year_3, color = progress_level)) +
+  geom_point(alpha = 0.5) +
+  ylim(300, 700) +
+  labs(x = "Final Score in APW Feb",
+       y = "Final Score in APW Oct",
+       color = "Progress Level") +
+  theme_minimal() +
+  facet_wrap(~ ai_user)
+```
+
+---
+
+## Progress Levels: Summary
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-progress-levels
+#| tbl-cap: "Progress Levels from APW Feb to APW Oct by AI User Status (% of pupils)"
+
+progress_summary <- final_data %>%
+  group_by(ai_user, progress_level) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(ai_user) %>%
+  mutate(pct = n / sum(n) * 100) %>%
+  ungroup()
+
+progress_summary %>%
+  pivot_wider(names_from = progress_level, values_from = c(n, pct), values_fill = 0) %>%
+  select(ai_user, starts_with("pct")) %>%
+  rename_with(~ str_remove(., "^pct_")) |>
+  (\(df) knitr::kable(df, digits = 2, col.names = c("", names(df)[-1])))()
+```
+
+---
+
+## Number of Comparisons
+
+- AI users completed **substantially more comparisons** → likely more reliable measurement
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-comparisons-summary
+#| tbl-cap: "Mean Comparisons Per Script by AI User Status"
+
+infit_summary <- final_data %>%
+  group_by(ai_user) %>%
+  summarise(
+    mean_comparisons_feb_year_2 = mean(comparisons_feb_year_2, na.rm = TRUE),
+    mean_comparisons_oct_year_3 = mean(comparisons_oct_year_3, na.rm = TRUE),
+    pct_feb_year_2 = sum(infit_feb_year_2 > 1.3, na.rm = TRUE) / n() * 100,
+    pct_oct_year_3 = sum(infit_oct_year_3 > 1.3, na.rm = TRUE) / n() * 100
+  )
+
+knitr::kable(
+  infit_summary %>% select(ai_user, mean_comparisons_feb_year_2, mean_comparisons_oct_year_3),
+  digits = 2,
+  col.names = c("", "Feb Year 2", "Oct Year 3")
+)
+```
+
+---
+
+## Infit Summary
+
+- AI users had a **much lower % of pupils with infit > 1.3**
+- Note: infit is sensitive to number of comparisons, so this doesn't necessarily reflect more consistent judging
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-infit-summary
+#| tbl-cap: "% of Pupils with Infit > 1.3 by AI User Status"
+
+knitr::kable(
+  infit_summary %>% select(ai_user, pct_feb_year_2, pct_oct_year_3),
+  digits = 2,
+  col.names = c("", "Feb Year 2", "Oct Year 3")
+)
+```
+
+---
+
+## Issues: Hallucinated Transcriptions
+
+- The AI occasionally produces transcriptions that do not match the original handwritten script
+- The **Fall of the House of Usher** issue
+- Handwriting degrades rapidly under exam conditions
+- Requires mutliple models & post-hoc checking to identify and remove affected scripts
+
+---
+
+## Issues: Weighting in Training Data
+
+- The AI's training data may over-represent certain writing styles or authors
+- The **Carol Ann Duffy issue**: if you are writing about a poem by Carol ...
+- This could introduce systematic bias in scores that is not present in human judging
+
+---
+
+## Issues: Unexpected Responses
+
+- In some cases the AI produces responses outside the expected scoring range or format
+- The **One Day issue**: "1 Day."
+- Very short responses when an essay is expected cause unexpected results
+
+---
+
+## Conclusion
+
+::: columns
+::: {.column style="width: 50%; font-size: 0.85em;"}
+### What we found
+- Similar average progress for both groups
+- Strong correlations in both groups (higher for AI users)
+- Regression to the mean more pronounced for AI users
+- More comparisons completed by AI → likely more reliable measurement
+:::
+::: {.column style="width: 50%; font-size: 0.85em;"}
+### What remains open
+- Does AI reward different skills or writing approaches than human judges?
+- Further qualitative analysis needed to explore this question
+:::
+:::

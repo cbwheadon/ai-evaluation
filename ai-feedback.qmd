@@ -1,0 +1,355 @@
+---
+title: "Using AI to give feedback on writing tasks"
+subtitle:  "OUCEA Feb 2026"
+author: "Chris Wheadon"
+institute: "No More Marking"
+format:
+  revealjs:
+    theme: serif
+    logo: Master-NMM.png
+    fontsize: 28px
+---
+
+```{=html}
+<style>
+.reveal h2 {
+  background-color: #3C1360;
+  color: #ffffff;
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+}
+.reveal h3 {
+  color: #00C1B4;
+  border-bottom: 2px solid #00C1B4;
+  padding-bottom: 0.1em;
+}
+.reveal blockquote {
+  border-left: 4px solid #F26522;
+  color: #2D2D2D;
+}
+.reveal .callout {
+  border-left-color: #3C1360;
+}
+.reveal .no-header h2 {
+  display: none;
+}
+.reveal h2:empty {
+  display: none;
+}
+</style>
+```
+
+## We are drowning in feedback!
+
+::: columns
+::: {.column style="width: 50%; font-size: 0.75em;"}
+![](./figures/drowning.png){width="100%"}
+:::
+::: {.column style="width: 50%; font-size: 0.75em;"}
+- **Audio Feedback from Teachers summarised by AI:** Individualised comments for every student.
+- **The AI "Chloe" Reports:** Direct feedback on multiple writing features (describing places, people, vocabulary) for every student.
+- **Instructional Resources:** Personalized multiple-choice questions and instructional guides on capitals, run-ons, and vocabulary.
+- **Teacher Reports:** Detailed analysis of the writing of every pupil.
+- **The "Examiner" Summaries:** AI-generated deep dives into general, strongest, and weakest responses — at class, school, and national level.
+:::
+:::
+
+---
+
+## Screenshots
+
+::: {style="position:relative; height:80vh;"}
+![](./screenshots/Screenshot 2026-02-26 at 11.52.24.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+
+![](./screenshots/Screenshot 2026-02-26 at 11.52.34.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+
+![](./screenshots/Screenshot 2026-02-26 at 11.52.50.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+
+![](./screenshots/Screenshot 2026-02-26 at 11.53.03.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+
+![](./screenshots/Screenshot 2026-02-26 at 11.53.14.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+
+![](./screenshots/Screenshot 2026-02-26 at 11.53.26.png){.fragment .fade-in style="position:absolute; top:0; left:0; max-width:100%; max-height:75vh; object-fit:contain;"}
+:::
+
+---
+
+## Are Pupils Learning through Feedback?
+
+::: columns
+::: {.column style="width: 50%; font-size: 0.75em;"}
+### DeepMind Study
+`goo.gle/LearnLM-Nov25`
+:::
+::: {.column style="width: 50%; font-size: 0.75em;"}
+### Our Research
+`substack.nomoremarking.com`
+:::
+:::
+
+---
+
+## DeepMind Study: Method
+
+- 5 UK secondary schools using the **Eedi** maths platform
+- Students chatted with a tutor after getting a question wrong
+
+::: columns
+::: {.column style="width: 33%"}
+**Condition 1**  
+Human tutor
+:::
+::: {.column style="width: 33%"}
+**Condition 2**  
+LLM tutor (human-supervised)
+:::
+::: {.column style="width: 33%"}
+**Condition 3**  
+Static pre-written hint
+:::
+:::
+
+---
+
+![](./figures/eedi.png){.r-stretch}
+
+---
+
+## DeepMind Study: Measurement
+
+Effectiveness measured three ways:
+
+1. Same question immediately after intervention
+2. Follow-up chat → two attempts at a new question on the same topic
+3. Success on the first question of the **next unit**
+
+---
+
+## DeepMind Study: Results
+
+| Condition | Solved on 2nd attempt |
+|---|---|
+| Human tutor | **91.2%** [88.5%, 93.6%] |
+| LearnLM (supervised) | **93.0%** [90.4%, 95.3%] |
+| Static hint | 65.4% [63.8%, 66.9%] |
+
+> AI tutoring was as effective as human tutoring — both far outperformed static hints.
+
+---
+
+## Our Own Study
+
+- 2,881 Year 6 pupils (aged 10–11)
+- Pre-test
+- Feedback
+- Post-test
+
+---
+
+## Pre-test
+
+- Students write a story in standardised conditions, without assistance
+- Assessed using **Comparative Judgement** by human teachers
+
+---
+
+## Feedback
+
+Students receive an automated, personalised workbook with:
+
+- A paragraph of written feedback *(teacher audio, processed by AI)*
+- A checklist of writing features *(AI-generated)*
+- Multiple-choice questions on a writing aspect, with a short instructional resource
+  - *The exact MCQs depend on their standardised score*
+
+---
+
+## Post-test Redraft
+
+- ~1 month later, students rewrite their story
+- Reassessed using Comparative Judgement
+- Change in score is measured
+
+---
+
+## Overall Results
+
+*What percentage of pupils do you expect to improve their scores?*
+
+. . .
+
+- Correlation between assessments: **0.67**
+- Mean score rose from **546 → 557** (+11 scaled score points)
+- Effect size: **0.34**
+- **62%** of pupils improved their score
+
+---
+
+## Our AI Feedback Approach
+
+- Focus on questions not explanations
+- Trained on pedagogical approach
+- Targeted to ability
+- Personalise
+
+---
+
+## Focus on questions not explanations
+
+::: columns
+::: {.column style="width: 50%"}
+**Explanation**
+
+To make your place descriptions even better, try adding details about what Emma saw, heard, or felt in Ancient Greece. For example, you could tell us what the buildings looked like, if it was sunny or windy, or what sounds were around her.
+:::
+
+::: {.column style="width: 50%"}
+**Question**
+
+*(Gap Fill)* Emma stepped out of the time machine and looked around Ancient Greece. The air felt ______, and she could hear ______ in the distance.
+
+A) warm and dusty; sandals tapping on stone streets  
+B) cold and snowy; waves crashing against ice  
+C) hot and humid; jungle birds calling  
+D) cool and foggy; car horns blaring  
+E) dry and smoky; fireworks popping overhead  
+:::
+:::
+
+---
+
+## Trained on pedagogical approach
+
+- Our focus is on **sentence-level** work and instruction
+
+::: columns
+
+::: {.column style="width: 50%"}
+**Feedback**
+
+*Describing Places:* You did a nice job starting your writing with "In the summer breeze" ...
+:::
+
+::: {.column style="width: 50%"}
+**Question**
+
+*(Run-ons)* Only one of the following is a correct sentence. Can you find it?
+
+A) He conjured a breeze it smelled of summer.  
+B) The charm flared I stepped back.  
+C) The sorcerer appeared at once I gasped.  
+D) The lanterns glowed. We felt enchanted.  
+E) The air turned warm quickly it lifted my cloak.  
+:::
+:::
+
+---
+
+## Targeted to ability
+
+::: columns
+::: {.column style="width: 50%; font-size: 0.75em;"}
+**Highest Grade**
+
+*(Logic & Inference)* The trapped person speaks through a walkie-talkie. Which detail best implies they are nervous and impatient without directly saying it?
+
+A) Their voice came in short bursts, words clipped, and the walkie-talkie crackled as if they kept pressing the button too hard.  
+B) Their voice sounded musical and steady, as if they were calmly reading a bedtime story.  
+C) They spoke slowly and formally, choosing each word like a careful teacher.  
+D) Their voice was deep and smooth, with a relaxed laugh at the end of every sentence.  
+E) They talked in long, drifting sentences, pausing often as if daydreaming.  
+:::
+::: {.column style="width: 50%; font-size: 0.75em;"}
+**Lowest Grade**
+
+*(Capitals)* Only one of the following uses capitals correctly. Can you find it?
+
+A) the nurse packed the remedy.  
+B) The nurse packed the Remedy.  
+C) the Nurse packed the remedy.  
+D) The nurse packed the remedy.  
+E) The Nurse packed the remedy.  
+:::
+:::
+
+---
+
+## Personalised
+
+![](./figures/happy-place.png){width="100%"}
+
+---
+
+## Adopting the tone of the writing
+
+**Question**
+
+*(Logic & Inference — People)* The writer shows the child's personality through an action in the extraordinary place. Which detail best implies the child is gentle and careful?
+
+A) I cup a ladybug in my hands and set it on a tall blade of grass instead of flicking it away.  
+B) I sprint through the meadow, knocking over every dew-covered flower I can find.  
+C) I grab fistfuls of grass and yank until the roots snap out of the ground.  
+D) I hurl stones into the stream to see the biggest splash I can make.  
+E) I shout at the trees so loudly that my throat hurts.  
+
+---
+
+## Challenges
+
+- Specificity vs hallucinations
+- Hallucinated Personalisation 
+- Inappropriate content
+
+---
+
+## Specificity vs Hallucination Trade Off
+
+**too generic to be much help eg 'use more imaginative word choices' or 'think about your capital letters.'**
+
+“What you can do better - always capitalise ocean and crocodile.” [Really?]
+
+“What you can do better - always start a sentence with a capital letter.” [The pupil had] 
+
+“What you can do better - make sure you finish each sentence with a full stop.” [The pupil had] 
+
+The AI struggled providing feedback on work in which the pupils had done everything correctly. 
+
+---
+
+## Hallucinated Personalisation
+
+::: {style="font-size:1.2em;"}
+::: {.callout-caution title="Feedback labelled with the wrong name"}
+It seems that in the cases where the feedback tries to say the student's name first, it will often use the subject from the writing. For example, we had students called Martin Luther King, Jr., Rosa Parks, and John Deere (3 times). Is it possible to remove the option for it to personalize the report by naming the person in the first line?
+:::
+:::
+
+---
+
+## Inappropriate content
+
+- Kids score very highly on the **violence scale** in their writing
+- Should we personalise feedback differently for open-ended tasks?
+
+::: columns
+::: {.column style="width: 50%; font-size: 0.75em;"}
+**Student's story**
+
+> *"Bob, a frightened boy, runs into a dark forest after a fight with his brother, encounters a man called Ghost Face wearing a ghost mask who initially seems threatening but then offers friendship; however, Ghost Face traps Bob, attempts to kill him, and ultimately kills Bob near his home while his mother watches in horror."*
+:::
+::: {.column style="width: 50%; font-size: 0.75em;"}
+**Question**
+
+*(Run-ons)* Only one of the following is a correct sentence. Can you find it?
+
+A) He ran into the forest it was pitch-dark.  
+B) The branches snapped I froze.  
+C) The masked man appeared he whispered my name.  
+D) The porch light flickered. His mother screamed.  
+E) The fog thickened quickly it hid the path.  
+:::
+:::
+
+
+

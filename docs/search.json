@@ -40,5 +40,299 @@
     "title": "APW Year 3 AI Report",
     "section": "Conclusion",
     "text": "Conclusion\nOverall, there is little to differentiate the performance of pupils whose schools used AI in October from those that did not. Both groups made similar average progress from February to October, with strong correlations between the two assessments.\nThe small differences that do appear, in the distributions and in the regression to the mean, may be explained by the higher number of comparisons completed by AI users, which is likely to lead to more reliable measurement.\nWhat the analysis cannot show is whether the AI rewarded different skills or approaches to writing than human judges. Further qualitative analysis of the types of writing rewarded by each method would be needed to explore this question."
+  },
+  {
+    "objectID": "APW-3-slides.html#context",
+    "href": "APW-3-slides.html#context",
+    "title": "AI Enhanced CJ",
+    "section": "Context",
+    "text": "Context\n\nAPW 3 is the writing of pupils in Year 3, aged 7 to 8\nUse this picture to write a story\nHandwritten\nIn Feb of year 2 no AI was available, teachers had to judge\nIn Oct of year 3, schools could choose whether or not to use AI judges\nThe following analysis considers matched pupils between the two sessions"
+  },
+  {
+    "objectID": "APW-3-slides.html#descriptive-statistics",
+    "href": "APW-3-slides.html#descriptive-statistics",
+    "title": "AI Enhanced CJ",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\nThe February results of the two groups were very similar. After using AI in October, the mean scores were again similar — but the spread narrowed for AI users.\n\n\n\n\nTable 1: Descriptive Statistics by AI User Status\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeb Year 2\n\n\nOct Year 3\n\n\n\n\nAI User\nMean\nSD\nMean\nSD\nN\n\n\n\n\nNon AI User\n474\n52\n494\n46\n12805\n\n\nAI User\n477\n51\n493\n40\n10980"
+  },
+  {
+    "objectID": "APW-3-slides.html#score-distributions",
+    "href": "APW-3-slides.html#score-distributions",
+    "title": "AI Enhanced CJ",
+    "section": "Score Distributions",
+    "text": "Score Distributions\n\n\nFigure 1: Distributions of Final Scores by AI User Status"
+  },
+  {
+    "objectID": "APW-3-slides.html#correlations",
+    "href": "APW-3-slides.html#correlations",
+    "title": "AI Enhanced CJ",
+    "section": "Correlations",
+    "text": "Correlations\nRegression lines show average progress from February to October was similar regardless of AI use.\n\n\nFigure 3"
+  },
+  {
+    "objectID": "APW-3-slides.html#correlations-by-group",
+    "href": "APW-3-slides.html#correlations-by-group",
+    "title": "AI Enhanced CJ",
+    "section": "Correlations by Group",
+    "text": "Correlations by Group\nCorrelations for AI users were higher than for non-AI users, though both were strong.\n\n\n\n\nTable 3: Correlation between APW Feb and APW Oct Final Scores by AI User Status\n\n\n\n\n\n\nai_user\nn\ncorrelation\n\n\n\n\nNon AI User\n12805\n0.70\n\n\nAI User\n10980\n0.74"
+  },
+  {
+    "objectID": "APW-3-slides.html#regression-to-the-mean-progress-levels",
+    "href": "APW-3-slides.html#regression-to-the-mean-progress-levels",
+    "title": "AI Enhanced CJ",
+    "section": "Regression to the Mean & Progress Levels",
+    "text": "Regression to the Mean & Progress Levels\nAI users had proportionally more pupils with above-average scores making less than average progress — a more pronounced regression to the mean effect.\n\n\nFigure 4: Progress Levels from APW Feb to APW Oct by AI User Status"
+  },
+  {
+    "objectID": "APW-3-slides.html#progress-levels-summary",
+    "href": "APW-3-slides.html#progress-levels-summary",
+    "title": "AI Enhanced CJ",
+    "section": "Progress Levels: Summary",
+    "text": "Progress Levels: Summary\n\n\n\n\nTable 4: Progress Levels from APW Feb to APW Oct by AI User Status (% of pupils)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbove Mean, Less Progress\nAbove Mean, More Progress\nBelow Mean, Less Progress\nBelow Mean, More Progress\n\n\n\n\nNon AI User\n13.37\n39.83\n34.96\n11.85\n\n\nAI User\n18.34\n36.39\n32.53\n12.73"
+  },
+  {
+    "objectID": "APW-3-slides.html#number-of-comparisons-infit",
+    "href": "APW-3-slides.html#number-of-comparisons-infit",
+    "title": "APW Year 3 AI Report",
+    "section": "Number of Comparisons & Infit",
+    "text": "Number of Comparisons & Infit\n\nAI users completed substantially more comparisons → likely more reliable measurement\n\n\n\n\n\nTable 4: Mean Comparisons Per Script by AI User Status\n\n\n\n\n\n\n\nFeb Year 2\nOct Year 3\n\n\n\n\nNon AI User\n14.51\n14.74\n\n\nAI User\n15.10\n24.85"
+  },
+  {
+    "objectID": "APW-3-slides.html#infit-summary",
+    "href": "APW-3-slides.html#infit-summary",
+    "title": "AI Enhanced CJ",
+    "section": "Infit Summary",
+    "text": "Infit Summary\n\nAI users had a much lower % of pupils with infit &gt; 1.3\nNote: infit is sensitive to number of comparisons, so this doesn’t necessarily reflect more consistent judging\n\n\n\n\n\nTable 6\n\n\n\n\n\n\n\nFeb Year 2\nOct Year 3\n\n\n\n\nNon AI User\n9.31\n8.88\n\n\nAI User\n9.34\n3.25"
+  },
+  {
+    "objectID": "APW-3-slides.html#conclusion",
+    "href": "APW-3-slides.html#conclusion",
+    "title": "AI Enhanced CJ",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\nWhat we found\n\nSimilar average progress for both groups\nStrong correlations in both groups (higher for AI users)\nRegression to the mean more pronounced for AI users\nMore comparisons completed by AI → likely more reliable measurement\n\n\nWhat remains open\n\nDoes AI reward different skills or writing approaches than human judges?\nFurther qualitative analysis needed to explore this question"
+  },
+  {
+    "objectID": "APW-3-slides.html#number-of-comparisons",
+    "href": "APW-3-slides.html#number-of-comparisons",
+    "title": "AI Enhanced CJ",
+    "section": "Number of Comparisons",
+    "text": "Number of Comparisons\n\nAI users completed substantially more comparisons → likely more reliable measurement\n\n\n\n\n\nTable 5: Mean Comparisons Per Script by AI User Status\n\n\n\n\n\n\n\nFeb Year 2\nOct Year 3\n\n\n\n\nNon AI User\n14.51\n14.74\n\n\nAI User\n15.10\n24.85"
+  },
+  {
+    "objectID": "APW-3-slides.html",
+    "href": "APW-3-slides.html",
+    "title": "APW Year 3 AI Report",
+    "section": "",
+    "text": "APW 3 is the writing of pupils in Year 3, aged 7 to 8\nUse this picture to write a story\nHandwritten\nIn Feb of year 2 no AI was available\nIn Oct of year 3, schools could choose whether or not to use AI in October\nThe following analysis considers matched pupils between the two sessions\n\n\n## Anchoring\n\nWe use an anchoring design where scripts are repeated between sessions\nScores are fixed, we calculate a shift constant between sessions to shift scores from the anchors\nSame anchors for AI and non AI route"
+  },
+  {
+    "objectID": "ai-feedback.html",
+    "href": "ai-feedback.html",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "",
+    "text": "Audio Feedback from Teachers summarised by AI: Individualised comments for every student.\nThe AI “Chloe” Reports: Direct feedback on multiple writing features (describing places, people, vocabulary) for every student.\nInstructional Resources: Personalized multiple-choice questions and instructional guides on capitals, run-ons, and vocabulary.\nTeacher Reports: Detailed analysis of the writing of every pupil.\nThe “Examiner” Summaries: AI-generated deep dives into general, strongest, and weakest responses — at class, school, and national level."
+  },
+  {
+    "objectID": "ai-feedback.html#we-are-drowning-in-feedback",
+    "href": "ai-feedback.html#we-are-drowning-in-feedback",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "",
+    "text": "Audio Feedback from Teachers summarised by AI: Individualised comments for every student.\nThe AI “Chloe” Reports: Direct feedback on multiple writing features (describing places, people, vocabulary) for every student.\nInstructional Resources: Personalized multiple-choice questions and instructional guides on capitals, run-ons, and vocabulary.\nTeacher Reports: Detailed analysis of the writing of every pupil.\nThe “Examiner” Summaries: AI-generated deep dives into general, strongest, and weakest responses — at class, school, and national level."
+  },
+  {
+    "objectID": "ai-feedback.html#screenshots",
+    "href": "ai-feedback.html#screenshots",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Screenshots",
+    "text": "Screenshots"
+  },
+  {
+    "objectID": "ai-feedback.html#are-pupils-learning-through-feedback",
+    "href": "ai-feedback.html#are-pupils-learning-through-feedback",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Are Pupils Learning through Feedback?",
+    "text": "Are Pupils Learning through Feedback?\n\n\n\nDeepMind Study\ngoo.gle/LearnLM-Nov25\n\n\n\nOur Research\nsubstack.nomoremarking.com"
+  },
+  {
+    "objectID": "ai-feedback.html#deepmind-study-method",
+    "href": "ai-feedback.html#deepmind-study-method",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "DeepMind Study: Method",
+    "text": "DeepMind Study: Method\n\n5 UK secondary schools using the Eedi maths platform\nStudents chatted with a tutor after getting a question wrong\n\n\n\nCondition 1\nHuman tutor\n\nCondition 2\nLLM tutor (human-supervised)\n\nCondition 3\nStatic pre-written hint"
+  },
+  {
+    "objectID": "ai-feedback.html#deepmind-study-measurement",
+    "href": "ai-feedback.html#deepmind-study-measurement",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "DeepMind Study: Measurement",
+    "text": "DeepMind Study: Measurement\nEffectiveness measured three ways:\n\nSame question immediately after intervention\nFollow-up chat → two attempts at a new question on the same topic\nSuccess on the first question of the next unit"
+  },
+  {
+    "objectID": "ai-feedback.html#deepmind-study-results",
+    "href": "ai-feedback.html#deepmind-study-results",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "DeepMind Study: Results",
+    "text": "DeepMind Study: Results\n\n\n\nCondition\nSolved on 2nd attempt\n\n\n\n\nHuman tutor\n91.2% [88.5%, 93.6%]\n\n\nLearnLM (supervised)\n93.0% [90.4%, 95.3%]\n\n\nStatic hint\n65.4% [63.8%, 66.9%]\n\n\n\n\nAI tutoring was as effective as human tutoring — both far outperformed static hints."
+  },
+  {
+    "objectID": "ai-feedback.html#our-own-study",
+    "href": "ai-feedback.html#our-own-study",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Our Own Study",
+    "text": "Our Own Study\n\n2,881 Year 6 pupils (aged 10–11)\nPre-test\nFeedback\nPost-test"
+  },
+  {
+    "objectID": "ai-feedback.html#pre-test",
+    "href": "ai-feedback.html#pre-test",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Pre-test",
+    "text": "Pre-test\n\nStudents write a story in standardised conditions, without assistance\nAssessed using Comparative Judgement by human teachers"
+  },
+  {
+    "objectID": "ai-feedback.html#feedback",
+    "href": "ai-feedback.html#feedback",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Feedback",
+    "text": "Feedback\nStudents receive an automated, personalised workbook with:\n\nA paragraph of written feedback (teacher audio, processed by AI)\nA checklist of writing features (AI-generated)\nMultiple-choice questions on a writing aspect, with a short instructional resource\n\nThe exact MCQs depend on their standardised score"
+  },
+  {
+    "objectID": "ai-feedback.html#post-test-redraft",
+    "href": "ai-feedback.html#post-test-redraft",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Post-test Redraft",
+    "text": "Post-test Redraft\n\n~1 month later, students rewrite their story\nReassessed using Comparative Judgement\nChange in score is measured"
+  },
+  {
+    "objectID": "ai-feedback.html#overall-results",
+    "href": "ai-feedback.html#overall-results",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Overall Results",
+    "text": "Overall Results\nWhat percentage of pupils do you expect to improve their scores?\n. . .\n\nCorrelation between assessments: 0.67\nMean score rose from 546 → 557 (+11 scaled score points)\nEffect size: 0.34\n62% of pupils improved their score"
+  },
+  {
+    "objectID": "ai-feedback.html#our-ai-feedback-approach",
+    "href": "ai-feedback.html#our-ai-feedback-approach",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Our AI Feedback Approach",
+    "text": "Our AI Feedback Approach\n\nFocus on questions not explanations\nTrained on pedagogical approach\nTargeted to ability\nPersonalise"
+  },
+  {
+    "objectID": "ai-feedback.html#focus-on-questions-not-explanations",
+    "href": "ai-feedback.html#focus-on-questions-not-explanations",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Focus on questions not explanations",
+    "text": "Focus on questions not explanations\n\n\nExplanation\nTo make your place descriptions even better, try adding details about what Emma saw, heard, or felt in Ancient Greece. For example, you could tell us what the buildings looked like, if it was sunny or windy, or what sounds were around her.\n\nQuestion\n(Gap Fill) Emma stepped out of the time machine and looked around Ancient Greece. The air felt ______, and she could hear ______ in the distance.\n\nwarm and dusty; sandals tapping on stone streets\n\ncold and snowy; waves crashing against ice\n\nhot and humid; jungle birds calling\n\ncool and foggy; car horns blaring\n\ndry and smoky; fireworks popping overhead"
+  },
+  {
+    "objectID": "ai-feedback.html#trained-on-pedagogical-approach",
+    "href": "ai-feedback.html#trained-on-pedagogical-approach",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Trained on pedagogical approach",
+    "text": "Trained on pedagogical approach\n\nOur focus is on sentence-level work and instruction\n\n\n\nFeedback\nDescribing Places: You did a nice job starting your writing with “In the summer breeze” …\n\nQuestion\n(Run-ons) Only one of the following is a correct sentence. Can you find it?\n\nHe conjured a breeze it smelled of summer.\n\nThe charm flared I stepped back.\n\nThe sorcerer appeared at once I gasped.\n\nThe lanterns glowed. We felt enchanted.\n\nThe air turned warm quickly it lifted my cloak."
+  },
+  {
+    "objectID": "ai-feedback.html#targeted-to-ability",
+    "href": "ai-feedback.html#targeted-to-ability",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Targeted to ability",
+    "text": "Targeted to ability\n\n\nHighest Grade\n(Logic & Inference) The trapped person speaks through a walkie-talkie. Which detail best implies they are nervous and impatient without directly saying it?\n\nTheir voice came in short bursts, words clipped, and the walkie-talkie crackled as if they kept pressing the button too hard.\n\nTheir voice sounded musical and steady, as if they were calmly reading a bedtime story.\n\nThey spoke slowly and formally, choosing each word like a careful teacher.\n\nTheir voice was deep and smooth, with a relaxed laugh at the end of every sentence.\n\nThey talked in long, drifting sentences, pausing often as if daydreaming.\n\n\n\nLowest Grade\n(Capitals) Only one of the following uses capitals correctly. Can you find it?\n\nthe nurse packed the remedy.\n\nThe nurse packed the Remedy.\n\nthe Nurse packed the remedy.\n\nThe nurse packed the remedy.\n\nThe Nurse packed the remedy."
+  },
+  {
+    "objectID": "ai-feedback.html#personalised",
+    "href": "ai-feedback.html#personalised",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Personalised",
+    "text": "Personalised"
+  },
+  {
+    "objectID": "ai-feedback.html#adopting-the-tone-of-the-writing",
+    "href": "ai-feedback.html#adopting-the-tone-of-the-writing",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Adopting the tone of the writing",
+    "text": "Adopting the tone of the writing\nQuestion\n(Logic & Inference — People) The writer shows the child’s personality through an action in the extraordinary place. Which detail best implies the child is gentle and careful?\n\nI cup a ladybug in my hands and set it on a tall blade of grass instead of flicking it away.\n\nI sprint through the meadow, knocking over every dew-covered flower I can find.\n\nI grab fistfuls of grass and yank until the roots snap out of the ground.\n\nI hurl stones into the stream to see the biggest splash I can make.\n\nI shout at the trees so loudly that my throat hurts."
+  },
+  {
+    "objectID": "ai-feedback.html#challenges",
+    "href": "ai-feedback.html#challenges",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Challenges",
+    "text": "Challenges\n\nSpecificity vs hallucinations\nHallucinated Personalisation\nInappropriate content"
+  },
+  {
+    "objectID": "ai-feedback.html#specificity-vs-hallucination-trade-off",
+    "href": "ai-feedback.html#specificity-vs-hallucination-trade-off",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Specificity vs Hallucination Trade Off",
+    "text": "Specificity vs Hallucination Trade Off\ntoo generic to be much help eg ‘use more imaginative word choices’ or ‘think about your capital letters.’\n“What you can do better - always capitalise ocean and crocodile.” [Really?]\n“What you can do better - always start a sentence with a capital letter.” [The pupil had]\n“What you can do better - make sure you finish each sentence with a full stop.” [The pupil had]\nThe AI struggled providing feedback on work in which the pupils had done everything correctly."
+  },
+  {
+    "objectID": "ai-feedback.html#hallucinated-personalisation",
+    "href": "ai-feedback.html#hallucinated-personalisation",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Hallucinated Personalisation",
+    "text": "Hallucinated Personalisation\n\n\n\n\n\n\n\nCautionFeedback labelled with the wrong name\n\n\n\nIt seems that in the cases where the feedback tries to say the student’s name first, it will often use the subject from the writing. For example, we had students called Martin Luther King, Jr., Rosa Parks, and John Deere (3 times). Is it possible to remove the option for it to personalize the report by naming the person in the first line?"
+  },
+  {
+    "objectID": "ai-feedback.html#inappropriate-content",
+    "href": "ai-feedback.html#inappropriate-content",
+    "title": "Using AI to give feedback on writing tasks",
+    "section": "Inappropriate content",
+    "text": "Inappropriate content\n\nKids score very highly on the violence scale in their writing\nShould we personalise feedback differently for open-ended tasks?\n\n\n\nStudent’s story\n\n“Bob, a frightened boy, runs into a dark forest after a fight with his brother, encounters a man called Ghost Face wearing a ghost mask who initially seems threatening but then offers friendship; however, Ghost Face traps Bob, attempts to kill him, and ultimately kills Bob near his home while his mother watches in horror.”\n\n\nQuestion\n(Run-ons) Only one of the following is a correct sentence. Can you find it?\n\nHe ran into the forest it was pitch-dark.\n\nThe branches snapped I froze.\n\nThe masked man appeared he whispered my name.\n\nThe porch light flickered. His mother screamed.\n\nThe fog thickened quickly it hid the path."
+  },
+  {
+    "objectID": "APW-3-slides.html#contexti-report",
+    "href": "APW-3-slides.html#contexti-report",
+    "title": "APW Year 3 AI Report",
+    "section": "ContextI Report”",
+    "text": "ContextI Report”\nauthor: “Chris Wheadon” institute: “No More Marking” format: revealjs: theme: serif logo: Master-NMM.png fontsize: 28px —"
+  },
+  {
+    "objectID": "APW-3-slides.html#anchoring-design",
+    "href": "APW-3-slides.html#anchoring-design",
+    "title": "APW Year 3 AI Report",
+    "section": "Anchoring Design",
+    "text": "Anchoring Design\n\nWe use an anchoring design where scripts are repeated between sessions\nScores are fixed; we calculate a shift constant between sessions to shift scores from the anchors\nSame anchors for AI and non-AI route"
+  },
+  {
+    "objectID": "APW-3-slides.html#measuring-progress",
+    "href": "APW-3-slides.html#measuring-progress",
+    "title": "AI Enhanced CJ",
+    "section": "Measuring Progress",
+    "text": "Measuring Progress\n\nWe use an anchoring design where scripts are repeated between sessions\nWe calculate a shift constant between sessions based on the shift in scores from the anchors\nSame anchors for AI and non-AI route"
+  },
+  {
+    "objectID": "APW-3-slides.html#statistical-tests",
+    "href": "APW-3-slides.html#statistical-tests",
+    "title": "AI Enhanced CJ",
+    "section": "Statistical Tests",
+    "text": "Statistical Tests\n\n\n\n\nTable 2\n\n\n\n\n\n\nEffect\nDFn\nDFd\nF\np\np&lt;.05\nges\n\n\n\n\nai_user\n1\n23783\n1.041\n0.308\n\n0.000\n\n\nassessment\n1\n23783\n5722.590\n0.000\n*\n0.034\n\n\nai_user:assessment\n1\n23783\n44.066\n0.000\n*\n0.000"
+  },
+  {
+    "objectID": "APW-3-slides.html#statistical-tests-interaction",
+    "href": "APW-3-slides.html#statistical-tests-interaction",
+    "title": "AI Enhanced CJ",
+    "section": "Statistical Tests: Interaction",
+    "text": "Statistical Tests: Interaction\n\n\nFigure 2"
+  },
+  {
+    "objectID": "APW-3-slides.html#issues-hallucinated-transcriptions",
+    "href": "APW-3-slides.html#issues-hallucinated-transcriptions",
+    "title": "AI Enhanced CJ",
+    "section": "Issues: Hallucinated Transcriptions",
+    "text": "Issues: Hallucinated Transcriptions\n\nThe AI occasionally produces transcriptions that do not match the original handwritten script\nThe Fall of the House of Usher issue\nHandwriting degrades rapidly under exam conditions\nRequires mutliple models & post-hoc checking to identify and remove affected scripts"
+  },
+  {
+    "objectID": "APW-3-slides.html#issues-weighting-in-training-data",
+    "href": "APW-3-slides.html#issues-weighting-in-training-data",
+    "title": "AI Enhanced CJ",
+    "section": "Issues: Weighting in Training Data",
+    "text": "Issues: Weighting in Training Data\n\nThe AI’s training data may over-represent certain writing styles or authors\nThe Carol Ann Duffy issue: if you are writing about a poem by Carol …\nThis could introduce systematic bias in scores that is not present in human judging"
+  },
+  {
+    "objectID": "APW-3-slides.html#issues-unexpected-responses",
+    "href": "APW-3-slides.html#issues-unexpected-responses",
+    "title": "AI Enhanced CJ",
+    "section": "Issues: Unexpected Responses",
+    "text": "Issues: Unexpected Responses\n\nIn some cases the AI produces responses outside the expected scoring range or format\nThe One Day issue: “1 Day.”\nVery short responses when an essay is expected cause unexpected results"
   }
 ]
