@@ -511,13 +511,35 @@ Table&nbsp;6
 </div>
 </div>
 </section>
+<section id="issues" class="slide level2">
+<h2>Issues</h2>
+<ul>
+<li><strong>Attention Bias</strong>: LLMs focus disproportionately on early parts of a dataset</li>
+<li><strong>Hallucinated Transcriptions</strong>: AI produces transcriptions that don’t match the original handwritten script</li>
+<li><strong>Weighting in Training Data</strong>: Training data may over-represent certain writing styles or authors</li>
+<li><strong>Unexpected Responses</strong>: AI produces responses outside the expected scoring range or format</li>
+</ul>
+</section>
+<section id="issues-attention-bias" class="slide level2">
+<h2>Issues: Attention Bias</h2>
+<ul>
+<li>This is a <strong>structural feature of LLMs</strong> like Claude, not a bug</li>
+<li>LLMs tend to focus attention on the <strong>early part of a dataset</strong></li>
+<li>Even with large 1M token context windows in theory, not all parts of a dataset influence the output equally in practice</li>
+<li>Scripts appearing later in a batch may receive less nuanced attention than those appearing earlier</li>
+<li>This could introduce <strong>systematic position-dependent bias</strong> into scores</li>
+</ul>
+<div style="font-size: 0.7em; margin-top: 1em;">
+<p>Reference: Kucharski, A. (2025). <a href="https://substack.com/@adamkucharski/note/c-216595750">Substack note on LLM attention bias</a></p>
+</div>
+</section>
 <section id="issues-hallucinated-transcriptions" class="slide level2">
 <h2>Issues: Hallucinated Transcriptions</h2>
 <ul>
 <li>The AI occasionally produces transcriptions that do not match the original handwritten script</li>
 <li>The <strong>Fall of the House of Usher</strong> issue</li>
 <li>Handwriting degrades rapidly under exam conditions</li>
-<li>Requires mutliple models &amp; post-hoc checking to identify and remove affected scripts</li>
+<li>Requires multiple models &amp; post-hoc checking to identify and remove affected scripts</li>
 </ul>
 </section>
 <section id="issues-weighting-in-training-data" class="slide level2">
@@ -536,24 +558,15 @@ Table&nbsp;6
 <li>Very short responses when an essay is expected cause unexpected results</li>
 </ul>
 </section>
-<section id="conclusion" class="slide level2">
-<h2>Conclusion</h2>
-<div class="columns">
-<div class="column" style="width: 50%; font-size: 0.85em;">
-<h3 id="what-we-found">What we found</h3>
-<ul>
-<li>Similar average progress for both groups</li>
-<li>Strong correlations in both groups (higher for AI users)</li>
-<li>Regression to the mean more pronounced for AI users</li>
-<li>More comparisons completed by AI → likely more reliable measurement</li>
-</ul>
-</div><div class="column" style="width: 50%; font-size: 0.85em;">
-<h3 id="what-remains-open">What remains open</h3>
-<ul>
-<li>Does AI reward different skills or writing approaches than human judges?</li>
-<li>Further qualitative analysis needed to explore this question</li>
-</ul>
-</div></div>
+<section id="the-ai-death-zone" class="slide level2">
+<h2>The AI Death Zone</h2>
+
+<img data-src="figures/death-zone.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><div style="font-size: 0.7em; margin-top: 1em;">
+<p>Wheadon, C. (2026). <a href="https://substack.nomoremarking.com/p/the-ai-death-zone-a-cautionary-tale">The AI Death Zone: a cautionary tale</a>. <em>No More Marking</em>, 7 March 2026.</p>
+</div>
+</section>
+<section class="slide level2">
+
 
 
 </section>

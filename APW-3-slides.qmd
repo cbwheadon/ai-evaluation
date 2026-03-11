@@ -330,6 +330,29 @@ knitr::kable(
 
 ---
 
+## Issues
+
+- **Attention Bias**: LLMs focus disproportionately on early parts of a dataset
+- **Hallucinated Transcriptions**: AI produces transcriptions that don't match the original handwritten script
+- **Weighting in Training Data**: Training data may over-represent certain writing styles or authors
+- **Unexpected Responses**: AI produces responses outside the expected scoring range or format
+
+---
+
+## Issues: Attention Bias
+
+- This is a **structural feature of LLMs** like Claude, not a bug
+- LLMs tend to focus attention on the **early part of a dataset**
+- Even with large 1M token context windows in theory, not all parts of a dataset influence the output equally in practice
+- Scripts appearing later in a batch may receive less nuanced attention than those appearing earlier
+- This could introduce **systematic position-dependent bias** into scores
+
+::: {style="font-size: 0.7em; margin-top: 1em;"}
+Reference: Kucharski, A. (2025). [Substack note on LLM attention bias](https://substack.com/@adamkucharski/note/c-216595750)
+:::
+
+---
+
 ## Issues: Hallucinated Transcriptions
 
 - The AI occasionally produces transcriptions that do not match the original handwritten script
@@ -355,19 +378,12 @@ knitr::kable(
 
 ---
 
-## Conclusion
+## The AI Death Zone
 
-::: columns
-::: {.column style="width: 50%; font-size: 0.85em;"}
-### What we found
-- Similar average progress for both groups
-- Strong correlations in both groups (higher for AI users)
-- Regression to the mean more pronounced for AI users
-- More comparisons completed by AI → likely more reliable measurement
+![](figures/death-zone.png){fig-align="center" width="80%"}
+
+::: {style="font-size: 0.7em; margin-top: 1em;"}
+Wheadon, C. (2026). [The AI Death Zone: a cautionary tale](https://substack.nomoremarking.com/p/the-ai-death-zone-a-cautionary-tale). *No More Marking*, 7 March 2026.
 :::
-::: {.column style="width: 50%; font-size: 0.85em;"}
-### What remains open
-- Does AI reward different skills or writing approaches than human judges?
-- Further qualitative analysis needed to explore this question
-:::
-:::
+
+---

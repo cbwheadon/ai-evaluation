@@ -109,7 +109,7 @@
     "href": "APW-3-slides.html#conclusion",
     "title": "AI Enhanced CJ",
     "section": "Conclusion",
-    "text": "Conclusion\n\n\nWhat we found\n\nSimilar average progress for both groups\nStrong correlations in both groups (higher for AI users)\nRegression to the mean more pronounced for AI users\nMore comparisons completed by AI → likely more reliable measurement\n\n\nWhat remains open\n\nDoes AI reward different skills or writing approaches than human judges?\nFurther qualitative analysis needed to explore this question"
+    "text": "Conclusion"
   },
   {
     "objectID": "APW-3-slides.html#number-of-comparisons",
@@ -121,9 +121,9 @@
   {
     "objectID": "APW-3-slides.html",
     "href": "APW-3-slides.html",
-    "title": "APW Year 3 AI Report",
+    "title": "AI Enhanced CJ",
     "section": "",
-    "text": "APW 3 is the writing of pupils in Year 3, aged 7 to 8\nUse this picture to write a story\nHandwritten\nIn Feb of year 2 no AI was available\nIn Oct of year 3, schools could choose whether or not to use AI in October\nThe following analysis considers matched pupils between the two sessions\n\n\n## Anchoring\n\nWe use an anchoring design where scripts are repeated between sessions\nScores are fixed, we calculate a shift constant between sessions to shift scores from the anchors\nSame anchors for AI and non AI route"
+    "text": "APW 3 is the writing of pupils in Year 3, aged 7 to 8\nUse this picture to write a story\nHandwritten\nIn Feb of year 2 no AI was available, teachers had to judge\nIn Oct of year 3, schools could choose whether or not to use AI judges\nThe following analysis considers matched pupils between the two sessions"
   },
   {
     "objectID": "ai-feedback.html",
@@ -319,7 +319,7 @@
     "href": "APW-3-slides.html#issues-hallucinated-transcriptions",
     "title": "AI Enhanced CJ",
     "section": "Issues: Hallucinated Transcriptions",
-    "text": "Issues: Hallucinated Transcriptions\n\nThe AI occasionally produces transcriptions that do not match the original handwritten script\nThe Fall of the House of Usher issue\nHandwriting degrades rapidly under exam conditions\nRequires mutliple models & post-hoc checking to identify and remove affected scripts"
+    "text": "Issues: Hallucinated Transcriptions\n\nThe AI occasionally produces transcriptions that do not match the original handwritten script\nThe Fall of the House of Usher issue\nHandwriting degrades rapidly under exam conditions\nRequires multiple models & post-hoc checking to identify and remove affected scripts"
   },
   {
     "objectID": "APW-3-slides.html#issues-weighting-in-training-data",
@@ -334,5 +334,47 @@
     "title": "AI Enhanced CJ",
     "section": "Issues: Unexpected Responses",
     "text": "Issues: Unexpected Responses\n\nIn some cases the AI produces responses outside the expected scoring range or format\nThe One Day issue: “1 Day.”\nVery short responses when an essay is expected cause unexpected results"
+  },
+  {
+    "objectID": "APW-3-slides.html#issues-attention-bias",
+    "href": "APW-3-slides.html#issues-attention-bias",
+    "title": "AI Enhanced CJ",
+    "section": "Issues: Attention Bias",
+    "text": "Issues: Attention Bias\n\nThis is a structural feature of LLMs like Claude, not a bug\nLLMs tend to focus attention on the early part of a dataset\nEven with large 1M token context windows in theory, not all parts of a dataset influence the output equally in practice\nScripts appearing later in a batch may receive less nuanced attention than those appearing earlier\nThis could introduce systematic position-dependent bias into scores\n\n\nReference: Kucharski, A. (2025). Substack note on LLM attention bias"
+  },
+  {
+    "objectID": "APW-3-slides.html#section",
+    "href": "APW-3-slides.html#section",
+    "title": "APW Year 3 AI Report",
+    "section": "",
+    "text": "Wheadon, C. (2026). The AI Death Zone: a cautionary tale. No More Marking, 7 March 2026. :::border-radius: 4px; } .reveal h3 { color: #00C1B4; border-bottom: 2px solid #00C1B4; padding-bottom: 0.1em; } .reveal blockquote { border-left: 4px solid #F26522; color: #2D2D2D; } .reveal .callout { border-left-color: #3C1360; } .reveal .no-header h2 { display: none; } .reveal h2:empty { display: none; }\n\n\n\n\n## Context\n\n- APW 3 is the writing of pupils in Year 3, aged 7 to 8\n- Use this picture to write a story\n- Handwritten\n- In Feb of year 2 no AI was available, teachers had to judge\n- In Oct of year 3, schools could choose whether or not to use AI judges\n- The following analysis considers **matched pupils** between the two sessions\n\n---\n\n## Measuring Progress\n\n- We use an anchoring design where scripts are repeated between sessions\n- We calculate a shift constant between sessions based on the shift in scores from the anchors\n- Same anchors for AI and non-AI route\n\n---\n\n## Descriptive Statistics\n\nThe February results of the two groups were very similar. After using AI in October, the mean scores were again similar — but the **spread narrowed for AI users**.\n\n\n::: {#tbl-descriptives .cell tbl-cap='Descriptive Statistics by AI User Status'}\n::: {.cell-output-display}\n`````{=html}\n&lt;table&gt;\n &lt;thead&gt;\n&lt;tr&gt;\n&lt;th style=\"empty-cells: hide;border-bottom:hidden;\" colspan=\"1\"&gt;&lt;/th&gt;\n&lt;th style=\"border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; \" colspan=\"2\"&gt;&lt;div style=\"border-bottom: 1px solid #ddd; padding-bottom: 5px; \"&gt;Feb Year 2&lt;/div&gt;&lt;/th&gt;\n&lt;th style=\"border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; \" colspan=\"2\"&gt;&lt;div style=\"border-bottom: 1px solid #ddd; padding-bottom: 5px; \"&gt;Oct Year 3&lt;/div&gt;&lt;/th&gt;\n&lt;th style=\"empty-cells: hide;border-bottom:hidden;\" colspan=\"1\"&gt;&lt;/th&gt;\n&lt;/tr&gt;\n  &lt;tr&gt;\n   &lt;th style=\"text-align:left;\"&gt; AI User &lt;/th&gt;\n   &lt;th style=\"text-align:right;\"&gt; Mean &lt;/th&gt;\n   &lt;th style=\"text-align:right;\"&gt; SD &lt;/th&gt;\n   &lt;th style=\"text-align:right;\"&gt; Mean &lt;/th&gt;\n   &lt;th style=\"text-align:right;\"&gt; SD &lt;/th&gt;\n   &lt;th style=\"text-align:right;\"&gt; N &lt;/th&gt;\n  &lt;/tr&gt;\n &lt;/thead&gt;\n&lt;tbody&gt;\n  &lt;tr&gt;\n   &lt;td style=\"text-align:left;\"&gt; Non AI User &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 474 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 52 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 494 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 46 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 12805 &lt;/td&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n   &lt;td style=\"text-align:left;\"&gt; AI User &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 477 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 51 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 493 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 40 &lt;/td&gt;\n   &lt;td style=\"text-align:right;\"&gt; 10980 &lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n\n\n:::"
+  },
+  {
+    "objectID": "APW-3-slides.html#conclusion-1",
+    "href": "APW-3-slides.html#conclusion-1",
+    "title": "APW Year 3 AI Report",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nWheadon, C. (2026). The AI Death Zone: a cautionary tale. No More Marking, 7 March 2026."
+  },
+  {
+    "objectID": "APW-3-slides.html#slide-title",
+    "href": "APW-3-slides.html#slide-title",
+    "title": "AI Enhanced CJ",
+    "section": "Slide Title",
+    "text": "Slide Title\n\n\nWheadon, C. (2026). The AI Death Zone: a cautionary tale. No More Marking, 7 March 2026."
+  },
+  {
+    "objectID": "APW-3-slides.html#the-ai-death-zone",
+    "href": "APW-3-slides.html#the-ai-death-zone",
+    "title": "AI Enhanced CJ",
+    "section": "The AI Death Zone",
+    "text": "The AI Death Zone\n\n\nWheadon, C. (2026). The AI Death Zone: a cautionary tale. No More Marking, 7 March 2026."
+  },
+  {
+    "objectID": "APW-3-slides.html#issues",
+    "href": "APW-3-slides.html#issues",
+    "title": "AI Enhanced CJ",
+    "section": "Issues",
+    "text": "Issues\n\nAttention Bias: LLMs focus disproportionately on early parts of a dataset\nHallucinated Transcriptions: AI produces transcriptions that don’t match the original handwritten script\nWeighting in Training Data: Training data may over-represent certain writing styles or authors\nUnexpected Responses: AI produces responses outside the expected scoring range or format"
   }
 ]
